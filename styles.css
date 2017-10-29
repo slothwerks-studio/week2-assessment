@@ -4,35 +4,39 @@ body {
   background-color: black;
 }
 
-h1, p, form, input, {
+h1, p, form, input {
   box-sizing: border-box;
 }
 
-p#welcomeBlock {
+.welcomeBlock {
   color: white;
   text-align: center;
-  font-size: .8em
+  font-size: .8em;
   padding: 5px;
   border-top: 1px solid white;
-  margin: 0 auto 5px auto;
+  margin: 0 auto 10px auto;
   padding: 5px;
   width: 200px;
 }
 
-form#loginForm {
+#loginForm {
   background-color: white;
-  width: 300px;
+  width: 380px;
   padding: 60px 40px;
   margin: 0 auto;
 }
 
+h1, .formInputArea, #submitButton {
+  margin-bottom: 30px;
+}
+
 h1 {
-  text-size: 2em;
+  font-size: 2em;
   color: black;
   text-align: center;
 }
 
-input {
+.textBox {
   color: gray;
   width: 100%;
   border: none;
@@ -41,49 +45,44 @@ input {
   font-size: .8em;
   text-align: left;
   margin-bottom: 15px;
-  /*padding: 5px;*/
 }
 
-input#passwordInput, div#formInputArea, h1 {
-  margin-bottom: 30px;
-}
-
-p#subText {
+p.subText {
   font-size: .7em;
   text-align: center;
   color: #cccccc;
 }
 
-p#subText a {
+p.subText a {
   color: #cccccc;
 }
 
- p#subText a:hover {
+p.subText a:hover {
   color: black;
 }
 
-input#submitButton {
+#submitButton {
   color: white;
   width: 100%;
   background-color: black;
+  border: 1px black solid;
   text-transform: uppercase;
-  text-size: 1em;
+  font-size: .9em;
   text-align: center;
   padding: 15px;
 }
 
-input#submitButton:hover {
+#submitButton:hover {
   color: black;
   background-color: white;
-  border: 1px black solid;
 }
 
-p#wrongPassword {
-  color: black;
+#wrongPassword {
+  color: red;
   width: 100%;
   text-transform: uppercase;
-  text-size: .8em;
+  font-size: .8em;
   text-align: center;
-  /*padding: 15px;*/
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 15px;
 }

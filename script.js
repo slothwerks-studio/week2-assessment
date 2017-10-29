@@ -1,29 +1,24 @@
 (function() {
 
-  var user = {
+  const user = {
     name: "Grant Chirpus",
     email: "coolguy@gmail.com",
     password: "ILoveCoffee"
   };
 
-  var welcomeBlock = document.getElementById("welcomeBlock");
-  var loginForm = document.getElementById("loginForm");
-  var headerMessage = document.getElementById("header");
-  var formInputArea = document.getElementById("formInputArea");
-  var emailInput = document.getElementById("emailInput");
-  var passwordInput = document.getElementById("passwordInput");
-  var submitButton = document.getElementById("submitButton");
-  var wrongInfoMessage = document.getElementById("wrongPassword");
-  var subTextMessage = document.getElementById("subText");
+  const submitButton = document.getElementById("submitButton");
 
-  // console.log(subTextMessage.innerHTML)
+
+
+
+  var formInputArea = document.getElementById("formInputArea");
 
   submitButton.onclick = checkLogin;
 
   function checkLogin() {
 
-    var email = emailInput.value;
-    var password = passwordInput.value;
+    const email = document.getElementById("emailInput").value;
+    const password = document.getElementById("passwordInput").value;
     
     // console.log(email);
     // console.log(password);
@@ -36,25 +31,23 @@
   }
 
   function wrongInfo() {
-    wrongInfoMessage.innerHTML = "Login Credentials Incorrect.";
+    document.getElementById("wrongPassword").innerHTML = "Login Credentials Incorrect.";
   }
 
   function displayWelcome() {
-    loginForm.style.width = "400px";
-    document.body.style.paddingTop = "60px";
-    headerMessage.innerHTML = "Welcome, Grant Chirpus!";
+
+    document.getElementById("loginForm").style.width = "460px";
+    document.body.style.paddingTop = "80px";
+    document.querySelector("h1").innerHTML = "Welcome, Grant Chirpus!";
+    document.querySelector("h1").style.marginBottom = "60px";
+    const welcomeBlock = document.getElementsByClassName("welcomeBlock")[0];
     document.body.removeChild(welcomeBlock);
-    formInputArea.removeChild(emailInput);
-    formInputArea.removeChild(passwordInput);
-    formInputArea.removeChild(submitButton);
-    loginForm.removeChild(wrongInfoMessage);
-    subTextMessage.innerHTML = '<a href="/logout/">Log Out</a>';
-    
-    subTextMessage.onclick = resetForm;
-    
-    function resetForm() {
-      location.reload();
-    }
+    const loginForm = document.getElementById("loginForm");
+    loginForm.style.paddingBottom = "10px";
+    const formInputArea = loginForm.querySelector("div");
+    loginForm.removeChild(formInputArea);
+    loginForm.removeChild(submitButton);
+    document.getElementsByClassName("subText")[0].innerHTML = '<a href="index.html">Log Out</a>';
     
   }
 
