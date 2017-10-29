@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <style>
+      
+      body {
+        padding: 10px;
+        font-family: "Times New Roman", Times, serif;
+        background-color: black;
+      }
+      
+      h1, p, form, input, {
+        box-sizing: border-box;
+      }
+      
+      p#welcomeBlock {
+        color: white;
+        text-align: center;
+        font-size: .8em
+        padding: 5px;
+        border-top: 1px solid white;
+        margin: 0 auto 5px auto;
+        padding: 5px;
+        width: 200px;
+      }
+      
+      form#loginForm {
+        background-color: white;
+        width: 300px;
+        padding: 60px 40px;
+        margin: 0 auto;
+      }
+      
+      h1 {
+        text-size: 2em;
+        color: black;
+        text-align: center;
+      }
+      
+      input {
+        color: gray;
+        width: 100%;
+        border: none;
+        border-bottom: 1px #cccccc solid;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .8em;
+        text-align: left;
+        margin-bottom: 15px;
+        /*padding: 5px;*/
+      }
+      
+      input#passwordInput, div#formInputArea, h1 {
+        margin-bottom: 30px;
+      }
+      
+      p#subText {
+        font-size: .7em;
+        text-align: center;
+        color: #cccccc;
+      }
+      
+      p#subText a {
+        color: #cccccc;
+      }
+      
+       p#subText a:hover {
+        color: black;
+      }
+      
+      input#submitButton {
+        color: white;
+        width: 100%;
+        background-color: black;
+        text-transform: uppercase;
+        text-size: 1em;
+        text-align: center;
+        padding: 15px;
+      }
+      
+      input#submitButton:hover {
+        color: black;
+        background-color: white;
+        border: 1px black solid;
+      }
+      
+      p#wrongPassword {
+        color: black;
+        width: 100%;
+        text-transform: uppercase;
+        text-size: .8em;
+        text-align: center;
+        /*padding: 15px;*/
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+    </style>
+    <!-- <link href="index.css" rel="stylesheet" type="text/css" /> -->
+  </head>
+  <body>
+    <p id="welcomeBlock">Welcome Back</p>
+    <form id="loginForm">
+      <h1 id="header">Hello, friend.</h1>
+      <div id="formInputArea">
+      <input type="text" id="emailInput" placeholder="Email" />
+      <input type="text" id="passwordInput" placeholder="Password" />
+      <input type="button" id="submitButton" value="Sign In" />
+      </div>
+      <p id="wrongPassword"></p>
+      <p id="subText">Having trouble?  <a href="/recover/">Recover your password</a></p>
+    </form>
+    <!-- <script src="index.js"></script> -->
+    <script>
+      
+      var user = {
+        name: "Grant Chirpus",
+        email: "coolguy@gmail.com",
+        password: "ILoveCoffee"
+      };
+      
+      var welcomeBlock = document.getElementById("welcomeBlock");
+      var loginForm = document.getElementById("loginForm");
+      var headerMessage = document.getElementById("header");
+      var formInputArea = document.getElementById("formInputArea");
+      var emailInput = document.getElementById("emailInput");
+      var passwordInput = document.getElementById("passwordInput");
+      var submitButton = document.getElementById("submitButton");
+      var wrongInfoMessage = document.getElementById("wrongPassword");
+      var subTextMessage = document.getElementById("subText");
+      
+      // console.log(subTextMessage.innerHTML)
+      
+      submitButton.onclick = checkLogin;
+      
+      function checkLogin() {
+      
+        var email = emailInput.value;
+        var password = passwordInput.value;
+        
+        // console.log(email);
+        // console.log(password);
+        
+        if (email === user.email && password === user.password) {
+          displayWelcome();
+        } else {
+          wrongInfo();
+        }
+      }
+      
+      function wrongInfo() {
+        wrongInfoMessage.innerHTML = "Login Credentials Incorrect.";
+      }
+      
+      function displayWelcome() {
+        loginForm.style.width = "400px";
+        document.body.style.paddingTop = "60px";
+        headerMessage.innerHTML = "Welcome, Grant Chirpus!";
+        document.body.removeChild(welcomeBlock);
+        formInputArea.removeChild(emailInput);
+        formInputArea.removeChild(passwordInput);
+        formInputArea.removeChild(submitButton);
+        loginForm.removeChild(wrongInfoMessage);
+        subTextMessage.innerHTML = '<a href="/logout/">Log Out</a>';
+        
+        subTextMessage.onclick = resetForm;
+        
+        function resetForm() {
+          location.reload();
+        }
+        
+      }
+    
+    </script>
+  </body>
+</html>

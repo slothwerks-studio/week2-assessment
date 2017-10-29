@@ -1,0 +1,89 @@
+body {
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  background-color: black;
+}
+
+h1, p, form, input, {
+  box-sizing: border-box;
+}
+
+p#welcomeBlock {
+  color: white;
+  text-align: center;
+  font-size: .8em
+  padding: 5px;
+  border-top: 1px solid white;
+  margin: 0 auto 5px auto;
+  padding: 5px;
+  width: 200px;
+}
+
+form#loginForm {
+  background-color: white;
+  width: 300px;
+  padding: 60px 40px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-size: 2em;
+  color: black;
+  text-align: center;
+}
+
+input {
+  color: gray;
+  width: 100%;
+  border: none;
+  border-bottom: 1px #cccccc solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .8em;
+  text-align: left;
+  margin-bottom: 15px;
+  /*padding: 5px;*/
+}
+
+input#passwordInput, div#formInputArea, h1 {
+  margin-bottom: 30px;
+}
+
+p#subText {
+  font-size: .7em;
+  text-align: center;
+  color: #cccccc;
+}
+
+p#subText a {
+  color: #cccccc;
+}
+
+ p#subText a:hover {
+  color: black;
+}
+
+input#submitButton {
+  color: white;
+  width: 100%;
+  background-color: black;
+  text-transform: uppercase;
+  text-size: 1em;
+  text-align: center;
+  padding: 15px;
+}
+
+input#submitButton:hover {
+  color: black;
+  background-color: white;
+  border: 1px black solid;
+}
+
+p#wrongPassword {
+  color: black;
+  width: 100%;
+  text-transform: uppercase;
+  text-size: .8em;
+  text-align: center;
+  /*padding: 15px;*/
+  font-family: Arial, Helvetica, sans-serif;
+}
